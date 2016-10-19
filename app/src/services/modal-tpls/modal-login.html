@@ -1,0 +1,30 @@
+<form name="loginForm" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">
+            DEMO APLIKACJI ANGULARJS, KTÓRA STANOWI CZĘŚĆ SZKOLENIA.
+        </h3>
+        <p>
+            JEŻELI JESTEŚ PROGRAMISTĄ PRZEJRZYJ KOD.
+            PO ZALOGOWANIU BĘDZIESZ MÓGŁ EDYTOWAĆ.
+        </p>
+    </div>
+    <div class="modal-body" ng-init="model.login='admin'; model.password='admin'">
+
+        <input-dctv type="text"
+                    model="model.login"
+                    required="true">
+            login:
+        </input-dctv>
+
+        <input-dctv type="password"
+                    model="model.password"
+                    required="true">
+            hasło:
+        </input-dctv>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok(loginForm.$valid)">Login</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

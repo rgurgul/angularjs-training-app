@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-training-app",
+  "private": false,
+  "version": "0.0.1",
+  "description": "Training project for angularjs",
+  "repository": "https://github.com/angular/angularjs-training-app",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "angular-resource": "latest",
+    "angular-bootstrap": "latest",
+    "angular-mocks": "latest",
+    "angular-cookies": "latest",
+    "angular-sanitize": "latest",
+    "angular-messages": "latest",
+    "json-menu": "latest",
+    "ng-file-upload": "latest",
+    "ngmap": "latest",
+    "bootstrap": "latest",
+    "underscore": "latest",
+    "jquery": "latest",
+    "animate.css": "latest",
+    "angular-breadcrumb": "latest"
+  }
+}

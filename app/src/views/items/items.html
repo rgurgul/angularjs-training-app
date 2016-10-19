@@ -1,0 +1,48 @@
+<div class="animated fadeIn items">
+    <div class="form-group-sm row">
+        <div class="col-lg-3">
+            <search-dctv control="vm.itemsControl" items="vm.items"></search-dctv>
+        </div>
+        <div class="col-lg-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-2 text-left"
+                             sort-dctv="title"
+                             sort-settings="vm.itemsControl">
+                            TYTUŁ
+                        </div>
+                        <div class="col-lg-8 text-center">
+                            <div uib-pagination total-items="(vm.items | filter:{title:vm.itemsControl.search}).length"
+                                 ng-model="vm.itemsControl.currentPage"
+                                 class="pagination-sm"
+                                 previous-text="<<"
+                                 next-text=">>"
+                                 max-size="8"
+                                 force-ellipses="true"
+                                 items-per-page="vm.itemsControl.itemsPerPage"
+                                 num-pages="vm.itemsControl.numPages">
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-right"
+                             sort-dctv="price"
+                             sort-settings="vm.itemsControl">
+                            CENA
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <item-cmp ng-repeat="item in vm.items
+                                | orderBy:vm.itemsControl.sortBy:vm.itemsControl.desc
+                                | filter:{title:vm.itemsControl.search}
+                                | startFromFtr:vm.itemsControl.currentPage:vm.itemsControl.itemsPerPage
+                                | limitTo:vm.itemsControl.itemsPerPage"
+                              model="item"
+                              delete="vm.delete(item)"
+                              update="vm.update(item)">
+                    </item-cmp>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

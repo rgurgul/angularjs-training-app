@@ -1,0 +1,35 @@
+<form name="itemForm" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">
+            Nowy produkt
+        </h3>
+    </div>
+    <div class="modal-body">
+        <input-dctv type="text"
+                    model="model.title"
+                    required="true">
+            nazwa produktu:
+        </input-dctv>
+
+        <input-dctv type="multiline"
+                    model="model.description"
+                    required="true">
+            opis produktu:
+        </input-dctv>
+
+        <upload-dctv model="model.img"
+                     required="true">
+        </upload-dctv>
+
+        <input-dctv type="number"
+                    model="model.price"
+                    required="true"
+                    minlength="1">
+            cena:
+        </input-dctv>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok(itemForm.$valid)">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

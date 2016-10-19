@@ -1,0 +1,28 @@
+<div class="form-group row">
+    <div class="col-lg-12">zdjęcie: <span class="text-danger">(max 2MB)</span></div>
+    <div class="col-lg-7">
+        <input type="file"
+               ngf-select
+               ng-model="$ctrl.file"
+               ng-change="$ctrl.file$.onNext($ctrl.file)"
+               ngf-max-size="2MB"
+               name="file"
+               accept="image/*"
+               ng-required="$ctrl.required">
+    </div>
+
+    <h2 class="col-lg-3">
+        <b class="text-success">
+            {{$ctrl.percent}} <span ng-if="$ctrl.percent">%</span>
+        </b>
+    </h2>
+
+    <div class="col-lg-2">
+        <img ng-src="{{$ctrl.model}}" class="img-thumbnail" />
+    </div>
+
+    <div class="text-danger col-lg-12"
+         ng-if="$ctrl.required && !$ctrl.model && $ctrl.form.$submitted">
+        Pole wymagane
+    </div>
+</div>

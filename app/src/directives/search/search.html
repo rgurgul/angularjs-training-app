@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+    <div class="panel-heading">WYSZUKAJ PRODUKT PO TYTULE</div>
+    <div class="panel-body">
+        <input type="search"
+               class="form-control"
+               autofocus
+               ng-model="$ctrl.control.search"/>
+        <hr/>
+        <div>ilość produków:
+            <span>{{($ctrl.items | filter:{title:$ctrl.control.search}).length}}</span> /
+            <span>{{$ctrl.items.length}}</span>
+        </div>
+        <div>numer strony: {{$ctrl.control.currentPage}} / {{$ctrl.control.numPages}}</div>
+
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">SORTOWANIE</div>
+
+    <div class="panel-body form-inline">
+        <select ng-init="$ctrl.control.sortBy='price'"
+                class="form-control"
+                ng-model="$ctrl.control.sortBy"
+                ng-options="item for item in ['title', 'price']">
+        </select>
+
+        <div class="btn-group-sm radio-inline" data-toggle="buttons">
+            <label class="btn btn-primary"
+                   ng-class="{'active': $ctrl.control.desc, 'normal': !$ctrl.control.desc}">
+                <input type="radio"
+                       ng-model="$ctrl.control.desc"
+                       ng-value="true">
+                <i class="glyphicon glyphicon-sort-by-attributes-alt"></i>
+            </label>
+            <label class="btn btn-primary"
+                   ng-class="{'active': !$ctrl.control.desc, 'normal': $ctrl.control.desc}">
+                <input type="radio"
+                       ng-model="$ctrl.control.desc"
+                       ng-value="false">
+                <i class="glyphicon glyphicon-sort-by-attributes"></i>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">ILOŚĆ PRODUKTÓW NA STRONIE</div>
+    <div class="panel-body">
+        <select class="form-control "
+                style="width: 80px;"
+                ng-model="$ctrl.control.itemsPerPage"
+                ng-options="item for item in [2, 5, 10]">
+        </select>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>myApp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width user-scalable=no initial-scale=1">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="libs/animate.css/animate.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+    <link rel="stylesheet" href="libs/json-menu/demo/style.css"/>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/angular-cookies/angular-cookies.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="libs/angular-breadcrumb/dist/angular-breadcrumb.js"></script>
+    <script src="libs/angular-messages/angular-messages.js"></script>
+    <script src="libs/angular-sanitize/angular-sanitize.js"></script>
+    <script src="libs/ng-file-upload/ng-file-upload.js"></script>
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/json-menu/src/json-menu.js"></script>
+    <script src="libs/ngmap/build/scripts/ng-map.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="libs/underscore/underscore-min.js"></script>
+
+    <!-- build:js -->
+    <!-- inject:js -->
+    <script src="src/names.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/views/contact/contact.js"></script>
+    <script src="src/views/items/items.js"></script>
+    <script src="src/views/item-detail/item-detail.js"></script>
+    <script src="src/views/faq/faq.js"></script>
+    <script src="src/views/shop/shop.js"></script>
+    <script src="src/services/items-storage.js"></script>
+    <script src="src/services/user-storage.js"></script>
+    <script src="src/services/api-interceptor.js"></script>
+    <script src="src/services/modal-generator.js"></script>
+    <script src="src/directives/item/item-dctv.js"></script>
+    <script src="src/directives/item/sort-dctv.js"></script>
+    <script src="src/directives/upload/upload-dctv.js"></script>
+    <script src="src/directives/list-drop-down/drop-down-dctv.js"></script>
+    <script src="src/directives/header/header-dctv.js"></script>
+    <script src="src/directives/input/input-dctv.js"></script>
+    <script src="src/directives/search/search.js"></script>
+    <script src="src/filters/filters.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body ng-app="myApp">
+
+<div class="left-container pull-left visible-md visible-lg">
+    <img src="assets/admin.png"/>
+    <ul json-menu="data/menu.json" class="menu list-unstyled"></ul>
+</div>
+<div class="content-container">
+    <header-dctv></header-dctv>
+    <div ui-view class="content container-fluid" ></div>
+</div>
+
+</body>
+</html>

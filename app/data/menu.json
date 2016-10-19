@@ -1,0 +1,33 @@
+[
+  {
+    "text": "Produkty",
+    "name": "items",
+    "icon": "glyphicon glyphicon-shopping-cart"
+  },
+  {
+    "text": "Kontakt",
+    "name": "contact",
+    "icon": "glyphicon glyphicon-envelope"
+  },
+  {
+    "text": "Sklepy",
+    "name": "shops",
+    "icon": "glyphicon glyphicon-home",
+    "group": "shops",
+    "sub": [
+      {
+        "text": "sklep 1",
+        "icon": "glyphicon glyphicon-info-sign"
+      },
+      {
+        "text": "sklep 2",
+        "icon": "glyphicon glyphicon-info-sign"
+      }
+    ]
+  },
+  {
+    "text": "Faq",
+    "name": "faq",
+    "icon": "glyphicon glyphicon-question-sign"
+  }
+]

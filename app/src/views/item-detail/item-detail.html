@@ -1,0 +1,39 @@
+<div class="items">
+    <form class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="name">nazwa</label>
+                <textarea id="name" class="form-control"
+                          type="text"
+                          ng-model="itemsStorage.item.title"
+                          ng-disabled="!$root.userState.access"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">opis</label>
+                <textarea id="description" class="form-control"
+                          cols="50"
+                          rows="8"
+                          ng-model="itemsStorage.item.description"
+                          ng-disabled="!$root.userState.access"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">cena</label>
+                <input id="price"
+                       class="form-control"
+                       type="text"
+                       ng-model="itemsStorage.item.price"
+                       ng-disabled="!$root.userState.access">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <upload-dctv class="pull-left"
+                         model="itemsStorage.item.img"
+                         required="true"
+                         ng-if="$root.userState.access">
+            </upload-dctv>
+        </div>
+    </form>
+    <div class="row col-lg-12">
+        <button class="btn btn-primary" ng-if="$root.userState.access" ng-click="update()">zapisz zmiany</button>
+    </div>
+</div>
