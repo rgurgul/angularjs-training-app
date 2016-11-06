@@ -43,12 +43,14 @@ describe('items page', function () {
         btnAdditem.click();
 
         var itemForm = element(by.name('itemForm'));
+        var modalCategory = itemForm.element(by.css('select'));
         var modalTitle = itemForm.element(by.css('input[type=text]'));
         var modalDesc = itemForm.element(by.css('textarea'));
         var modalPrice = itemForm.element(by.css('input[type=number]'));
         var modalFile = itemForm.element(by.css('input[type=file]'));
         var modalBtnOk = itemForm.element(by.buttonText("OK"));
 
+        modalCategory.element(by.cssContainingText('option', 'food')).click();
         modalTitle.sendKeys(itemTitle);
         modalDesc.sendKeys('desc');
         modalPrice.sendKeys(123);
