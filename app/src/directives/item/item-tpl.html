@@ -19,7 +19,8 @@
                    style="width: 70px;"
                    class="form-control"
                    type="number"
-                   ng-model="$ctrl.price"
+                   ng-model-options="{ debounce: 1000 }"
+                   ng-model="$ctrl.model.price"
                    ng-disabled="!$root.userState.access">
             <span>zł</span>
         </div>

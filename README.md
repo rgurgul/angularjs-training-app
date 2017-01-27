@@ -2,7 +2,8 @@
 Training project for angularjs
 
 # Installing
-* `npm install` to install npm and bower dependencies
+* `npm i bower -g` to install bower
+* `npm i` to install npm and bower dependencies
 
 # Running
 * `npm start` to run local server: http://localhost:8000
