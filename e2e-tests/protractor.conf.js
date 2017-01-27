@@ -9,8 +9,8 @@ exports.config = {
         'browserName': 'chrome'
     },
 
-    baseUrl: 'http://localhost:8000/app/#/',
-    //baseUrl: 'http://js.edu.pl/app/#/',
+    baseUrl: 'http://localhost:8000/app/#!/',
+    //baseUrl: 'http://js.edu.pl/app/#!/',
 
     directConnect: true,
 

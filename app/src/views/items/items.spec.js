@@ -25,7 +25,7 @@ describe('ItemsCtrl', function () {
     }));
 
     it('should respond to URL', function () {
-        expect($state.href('items')).toEqual('#/items');
+        expect($state.href('items')).toEqual('#!/items');
     });
 
     it('should fetch items list', function () {

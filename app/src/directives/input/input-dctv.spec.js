@@ -19,10 +19,6 @@ describe('inputDctv', function () {
         expect(form.find('input').attr('type')).toEqual('email');
     });
 
-    it('should set transclude', function () {
-        expect(form.find('div[ng-transclude] > span').html().trim()).toEqual('Twoje imię');
-    });
-
     it('shouldn\'t display error initially', function () {
         expect(form.find('small').length).toEqual(0);
     });
