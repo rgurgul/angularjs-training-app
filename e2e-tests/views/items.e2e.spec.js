@@ -60,14 +60,14 @@ describe('items page', function () {
         modalBtnOk.click();
 
         // item searching
-        var search = element(by.model('$ctrl.control.search'));
+        var search = element(by.model('$ctrl.control.title'));
         search.sendKeys(itemTitle);
         expect(getitemsCount()).toBe(1);
     });
 
     it('should find item and remove it', function () {
         // item searching
-        var search = element(by.model('$ctrl.control.search'));
+        var search = element(by.model('$ctrl.control.title'));
         search.sendKeys(itemTitle);
         expect(getitemsCount()).toBe(1);
 
@@ -81,41 +81,6 @@ describe('items page', function () {
         modalDeleteBtnOk.click();
         helpers.waitForAlert();
         expect(getitemsCount()).toBe(0);
-    });
-
-    it('should pagination work properly', function () {
-        var expectedBricks = element(by.binding('$ctrl.items.length')).getText()
-            .then(function (value) {
-                var allItemsValue = value.match(/[0-9]/g).join('');
-                var itemsPerPageSelect = element(by.model('$ctrl.control.itemsPerPage'));
-                return itemsPerPageSelect.$('option:checked').getText()
-                    .then(function (selectedOption) {
-                        return Math.ceil(allItemsValue / selectedOption).toString();
-                    })
-            });
-
-        var paginationBricks = element.all(by.repeater('page in pages track by $index'))
-            .then(function (items) {
-                return items.length;
-            });
-
-        element(by.cssContainingText('.pagination a', '...'))
-            .isPresent()
-            .then(function (paginationLimit) {
-                if (paginationLimit) {
-                    paginationBricks
-                        .then(function (value) {
-                            var num = value - 1;
-                            expect(expectedBricks).toBeGreaterThan(num);
-                        });
-                } else {
-                    paginationBricks
-                        .then(function (value) {
-                            var num = value.toString();
-                            expect(expectedBricks).toBe(num);
-                        });
-                }
-            });
     });
 
 });

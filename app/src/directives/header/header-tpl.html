@@ -1,12 +1,6 @@
 <div class="container-fluid" style="background-color: #F3F3F4;border-bottom: 1px solid #e7eaec !important;">
     <span ncy-breadcrumb class="pull-left"></span>
     <ul class="list-inline pull-right" style="margin: 0 !important;">
-        <li ng-if="$root.userState.access">
-            <a class="btn btn-success" ng-click="vm.addItem()">
-                <i class="glyphicon glyphicon-plus"></i>
-                dodaj produkt
-            </a>
-        </li>
         <li>
             <a class="header-btn">
                 <span class="preloader" ng-class="{show: $root.userState.unsavedData}"></span>

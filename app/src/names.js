@@ -25,7 +25,6 @@ const MODULES = {
         ITEM: 'myApp.itemCmp',
         UPLOAD: 'myApp.uploadDctv',
         SEARCH: 'myApp.searchDctv',
-        SORT: 'myApp.sortDctv',
         LIST_DROP_DOWN: 'myApp.listDropDownDctv'
     },
     SERVICES: {
@@ -52,7 +51,6 @@ const TEMPLATES = {
         INPUT: 'src/directives/input/input-tpl.html',
         ITEM: "src/directives/item/item-tpl.html",
         UPLOAD: "src/directives/upload/upload-tpl.html",
-        SORT: "src/directives/item/sort-tpl.html",
         SEARCH: "src/directives/search/search.html"
     },
     MODALS: {

@@ -20,9 +20,9 @@ angular
         $scope.$on('mapInitialized', function (evt, evtMap) {
             $http
                 .get(CONFIG.API_PREFIX + "shop" + $state.params.id + '.json')
-                .success(function (responseData) {
-                    $scope.shopName = responseData.data.name;
-                    $scope.data = responseData.data;
+                .then(function (responseData) {
+                    $scope.shopName = responseData.data.data.name;
+                    $scope.data = responseData.data.data;
                     $scope.map.setZoom(6);
                     $scope.map.setOptions({
                         draggable: false,

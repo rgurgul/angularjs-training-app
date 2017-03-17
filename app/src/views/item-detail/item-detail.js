@@ -1,6 +1,6 @@
 angular
     .module(MODULES.VIEWS.ITEM_DETAILS, [
-        MODULES.THIRD_PARTY.UI_ROUTER, 
+        MODULES.THIRD_PARTY.UI_ROUTER,
         MODULES.SERVICES.ITEMS_STORAGE,
         MODULES.DIRECTIVES.UPLOAD
     ])
@@ -19,17 +19,19 @@ angular
                 controller: 'ItemDetailCtrl',
                 ncyBreadcrumb: {
                     label: "{{data.title | limitTo : 50}}{{(data.title.length > 50) && '...' || ''}}"
-                },
-                resolve: {
-                    responseData: function (itemsStorage, $stateParams) {
-                        itemsStorage.get({id: $stateParams.id});
-                    }
                 }
             });
     })
-    .controller('ItemDetailCtrl', function ($scope, itemsStorage) {
-        $scope.itemsStorage = itemsStorage;
+    .controller('ItemDetailCtrl', function ($scope, itemsStorage, $stateParams) {
+
+        itemsStorage
+            .get({id: $stateParams.id})
+            .then(function (response) {
+                $scope.item = response.data;
+            });
+
         $scope.update = function () {
-            itemsStorage.update($scope.itemsStorage.item);
+            itemsStorage.update($scope.item);
         }
+
     });

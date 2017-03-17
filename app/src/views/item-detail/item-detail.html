@@ -5,7 +5,7 @@
                 <label for="name">nazwa</label>
                 <textarea id="name" class="form-control"
                           type="text"
-                          ng-model="itemsStorage.item.title"
+                          ng-model="item.title"
                           ng-disabled="!$root.userState.access"></textarea>
             </div>
             <div class="form-group">
@@ -13,7 +13,7 @@
                 <textarea id="description" class="form-control"
                           cols="50"
                           rows="8"
-                          ng-model="itemsStorage.item.description"
+                          ng-model="item.description"
                           ng-disabled="!$root.userState.access"></textarea>
             </div>
             <div class="form-group">
@@ -21,13 +21,13 @@
                 <input id="price"
                        class="form-control"
                        type="text"
-                       ng-model="itemsStorage.item.price"
+                       ng-model="item.price"
                        ng-disabled="!$root.userState.access">
             </div>
         </div>
         <div class="col-lg-6">
             <upload-dctv class="pull-left"
-                         model="itemsStorage.item.img"
+                         model="item.img"
                          required="true"
                          ng-if="$root.userState.access">
             </upload-dctv>

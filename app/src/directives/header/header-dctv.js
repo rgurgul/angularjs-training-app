@@ -1,9 +1,8 @@
 angular
     .module(MODULES.DIRECTIVES.HEADER, [
-        MODULES.SERVICES.ITEMS_STORAGE,
         MODULES.SERVICES.USER_STORAGE
     ])
-    .directive('headerDctv', function (itemsStorage, userStorage) {
+    .directive('headerDctv', function (userStorage) {
         return {
             transclude: true,
             scope: true,
@@ -11,7 +10,6 @@ angular
             controller: function () {
                 this.signIn = userStorage.signIn;
                 this.signOut = userStorage.signOut;
-                this.addItem = itemsStorage.add;
             },
             controllerAs: "vm"
         }

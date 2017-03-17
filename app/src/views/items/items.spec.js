@@ -28,9 +28,11 @@ describe('ItemsCtrl', function () {
         expect($state.href('items')).toEqual('#!/items');
     });
 
-    it('should fetch items list', function () {
-        expect(ctrl.items).toEqual([]);
-        httpBackend.flush();
-        expect(ctrl.items).toEqual(responseData.data);
-    });
+    it('should open add modal', inject(function (itemsStorage, CONFIG, modalGenerator, $q) {
+        var modalPromise = $q.defer();
+        spyOn(modalGenerator, 'open').and.returnValue(modalPromise.promise);
+        ctrl.addItem();
+        expect(modalGenerator.open).toHaveBeenCalledWith(TEMPLATES.MODALS.ADD_ITEM, 'lm');
+    }));
+
 });

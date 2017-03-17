@@ -12,31 +12,16 @@ angular
         });
 
         var itemsStorage = {
-            items: [],
-            fetch: function () {
-                api
-                    .get(function (responseData) {
-                        itemsStorage.items.length = 0;
-                        angular.extend(itemsStorage.items, responseData.data);
-                    });
+            fetch: function (filters) {
+                return api.get(filters).$promise;
             },
 
             get: function (item) {
-                api
-                    .get(item, function (responseData) {
-                        itemsStorage.item = responseData.data;
-                    });
+                return api.get(item).$promise;
             },
 
-            add: function () {
-                modalGenerator
-                    .open(TEMPLATES.MODALS.ADD_ITEM, 'lm')
-                    .then(function (modalData) {
-                        api
-                            .save(modalData, function (responseData) {
-                                itemsStorage.fetch();
-                            });
-                    });
+            add: function (data) {
+                return api.save(data).$promise;
             },
 
             update: function (item) {
@@ -48,15 +33,7 @@ angular
             },
 
             delete: function (item) {
-                modalGenerator
-                    .open(TEMPLATES.MODALS.DELETE_ITEM, 'lm', item)
-                    .then(function (modalData) {
-                        api
-                            .delete({id: item.id}, function () {
-                                itemsStorage.fetch();
-                                alert('element: ' + item.title + ' został usunięty z powodu:\n' + modalData.reason);
-                            });
-                    });
+                return api.delete({id: item.id}).$promise;
             }
         };
 

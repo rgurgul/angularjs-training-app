@@ -3,7 +3,6 @@ angular
     .component('searchDctv', {
         templateUrl: TEMPLATES.DIRECTIVES.SEARCH,
         bindings: {
-            control: "<",
-            items: "<"
+            control: "<"
         }
     });
