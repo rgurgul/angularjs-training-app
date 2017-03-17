@@ -8,7 +8,7 @@ angular
             state: {
                 access: false,
                 userName: false,
-                unsavedData: false,
+                unsavedData: false
             },
             setUserAccess: function (access, msg) {
                 this.state.access = access;
