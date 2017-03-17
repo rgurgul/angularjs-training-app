@@ -16,8 +16,7 @@ const MODULES = {
         CONTACT: 'myApp.contact',
         ITEMS: 'myApp.items',
         ITEM_DETAILS: 'myApp.itemDetails',
-        SHOP: 'myApp.shop',
-        FAQ: 'myApp.faq'
+        SHOP: 'myApp.shop'
     },
     DIRECTIVES: {
         HEADER: 'myApp.headerDctv',
@@ -41,7 +40,6 @@ const MODULES = {
 const TEMPLATES = {
     VIEWS: {
         CONTACT: 'src/views/contact/contact.html',
-        FAQ: 'src/views/faq/faq-tpl.html',
         ITEM_DETAIL: 'src/views/item-detail/item-detail.html',
         ITEMS: 'src/views/items/items.html',
         SHOP: "src/views/shop/shop.html"
