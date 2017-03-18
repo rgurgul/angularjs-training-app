@@ -36,8 +36,12 @@ angular
             modalGenerator
                 .open(TEMPLATES.MODALS.ADD_ITEM, 'lm')
                 .then(function (data) {
-                    itemsStorage.add(data);
-                });
+                    itemsStorage
+                        .add(data)
+                        .then(function () {
+                            this.getItems();
+                        }.bind(this));
+                }.bind(this));
         };
 
         this.delete = function (item) {
