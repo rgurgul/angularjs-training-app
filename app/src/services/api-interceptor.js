@@ -2,7 +2,7 @@ angular
     .module(MODULES.SERVICES.API_INTERCEPTOR, [])
     .service('apiInterceptor', function ($q, $cookies, $rootScope) {
         function errInfo(msg) {
-            alert(angular.toJson(msg));
+            console.warn(angular.toJson(msg));
             $rootScope.$broadcast('api:error');
         }
 
